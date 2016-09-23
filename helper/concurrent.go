@@ -25,6 +25,16 @@ func (c ConcurrentWork) Add(units []interface{}) ConcurrentWork {
 	return c
 }
 
+func (c ConcurrentWork) AddChan(ch chan interface{}) ConcurrentWork {
+	go func() {
+		for unit := range ch {
+			c.workChan <- unit
+		}
+		close(c.workChan)
+	}()
+	return c
+}
+
 func (c ConcurrentWork) Do(callback func(interface{}) error) []error {
 	wg := sync.WaitGroup{}
 	errors := []error{}

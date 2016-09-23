@@ -1,0 +1,73 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "yXrS4e4yxaRBu/MX+39X3cS4kbg=",
+			"path": "github.com/Sirupsen/logrus",
+			"revision": "a283a10442df8dc09befd873fab202bf8a253d6a",
+			"revisionTime": "2016-07-16T02:56:31Z"
+		},
+		{
+			"checksumSHA1": "fNDjBgLI1Hux3FOtjmXgxFykpPs=",
+			"path": "github.com/coreos/etcd/client",
+			"revision": "cabd28516c8a77df47cb483ef711b192d4fbb003",
+			"revisionTime": "2016-08-03T17:59:00Z"
+		},
+		{
+			"checksumSHA1": "mKIXx1kDwmVmdIpZ3pJtRBuUKso=",
+			"path": "github.com/coreos/etcd/pkg/pathutil",
+			"revision": "cabd28516c8a77df47cb483ef711b192d4fbb003",
+			"revisionTime": "2016-08-03T17:59:00Z"
+		},
+		{
+			"checksumSHA1": "gx1gJIMU6T0UNQ0bPZ/drQ8cpCI=",
+			"path": "github.com/coreos/etcd/pkg/types",
+			"revision": "cabd28516c8a77df47cb483ef711b192d4fbb003",
+			"revisionTime": "2016-08-03T17:59:00Z"
+		},
+		{
+			"checksumSHA1": "vbjzNeqTEIPV1W6wT5PB3OwN9Ns=",
+			"path": "github.com/kr/pretty",
+			"revision": "737b74a46c4bf788349f72cb256fed10aea4d0ac",
+			"revisionTime": "2016-07-08T21:57:48Z"
+		},
+		{
+			"checksumSHA1": "uulQHQ7IsRKqDudBC8Go9J0gtAc=",
+			"path": "github.com/kr/text",
+			"revision": "7cafcd837844e784b526369c9bce262804aebc60",
+			"revisionTime": "2016-05-04T02:26:26Z"
+		},
+		{
+			"checksumSHA1": "zmC8/3V4ls53DJlNTKDZwPSC/dA=",
+			"path": "github.com/satori/go.uuid",
+			"revision": "0aa62d5ddceb50dbcb909d790b5345affd3669b6",
+			"revisionTime": "2016-07-13T18:03:06Z"
+		},
+		{
+			"checksumSHA1": "0Vna0ZeDxFdE/TjHgCiN2rBhGfI=",
+			"path": "github.com/ugorji/go/codec",
+			"revision": "3487a5545b3d480987dfb0492035299077fab33a",
+			"revisionTime": "2016-07-22T20:24:49Z"
+		},
+		{
+			"checksumSHA1": "9jjO5GjLa0XF/nfWihF02RoH4qc=",
+			"path": "golang.org/x/net/context",
+			"revision": "9bc2a3340c92c17a20edcd0080e93851ed58f5d5",
+			"revisionTime": "2016-08-30T03:17:57Z"
+		},
+		{
+			"checksumSHA1": "8fD/im5Kwvy3JgmxulDTambmE8w=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "a646d33e2ee3172a661fc09bca23bb4889a41bc8",
+			"revisionTime": "2016-07-15T05:43:45Z"
+		},
+		{
+			"checksumSHA1": "I2d7Kn572Fz02mnnlcI4MHXCu0c=",
+			"path": "gopkg.in/check.v1",
+			"revision": "4f90aeace3a26ad7021961c297b22c42160c7b25",
+			"revisionTime": "2016-01-05T16:49:36Z"
+		}
+	],
+	"rootPath": "github.com/revinate/go-utils"
+}

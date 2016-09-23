@@ -26,3 +26,8 @@ _testmain.go
 
 # Created by .ignore support plugin (hsz.mobi)
 .idea/*
+
+# Vendor
+vendor_link/*
+vendor/*
+!vendor/vendor.json
