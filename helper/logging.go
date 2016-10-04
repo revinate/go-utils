@@ -11,7 +11,7 @@ import (
 
 var Log = logrus.New()
 
-func initLogging(isDebug bool) {
+func InitLogging(isDebug bool) {
 	Log.Formatter = &logrus.TextFormatter{}
 	if isDebug {
 		Log.Level = logrus.DebugLevel

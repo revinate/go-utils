@@ -1,5 +1,5 @@
 hash: 010a6082be18839083ad4f7492abab53ae7ead556a770f9fedab3bc5493b2020
-updated: 2016-10-04T12:03:21.203909352-07:00
+updated: 2016-10-04T12:37:19.616720979-07:00
 imports:
 - name: github.com/coreos/etcd
   version: 2469a9568548b3f8abc22f5a2462c3443823334a
@@ -20,7 +20,7 @@ imports:
   subpackages:
   - codec
 - name: golang.org/x/net
-  version: 6acef71eb69611914f7a30939ea9f6e194c78172
+  version: f315505cf3349909cdf013ea56690da34e96a451
   subpackages:
   - context
 - name: golang.org/x/sys
