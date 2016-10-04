@@ -11,10 +11,13 @@ import (
 
 var Log = logrus.New()
 
-func init() {
+func initLogging(isDebug bool) {
 	Log.Formatter = &logrus.TextFormatter{}
-	Log.Level = logrus.InfoLevel
-}
+	if isDebug {
+		Log.Level = logrus.DebugLevel
+	} else {
+		Log.Level = logrus.InfoLevel
+	}}
 
 // helper.FailOnError is on error behavior
 func Fatal(err error, msg string) {
