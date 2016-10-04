@@ -6,12 +6,14 @@ type ConcurrentWork struct {
 	workChan      chan interface{}
 	out           chan interface{}
 	numGoRoutines int
+	mutex         sync.Mutex
 }
 
 func NewConcurrentWork(num int) ConcurrentWork {
 	return ConcurrentWork{
 		workChan:      make(chan interface{}, 0),
 		numGoRoutines: num,
+		mutex:         sync.Mutex{},
 	}
 }
 
@@ -36,6 +38,14 @@ func (c ConcurrentWork) AddChan(ch chan interface{}) ConcurrentWork {
 }
 
 func (c ConcurrentWork) Do(callback func(interface{}) error) []error {
+	return c.do(callback, false)
+}
+
+func (c ConcurrentWork) SafeDo(callback func(interface{}) error) []error {
+	return c.do(callback, true)
+}
+
+func (c ConcurrentWork) do(callback func(interface{}) error, isSafe bool) []error {
 	wg := sync.WaitGroup{}
 	errors := []error{}
 	for n := 0; n < c.numGoRoutines; n++ {
@@ -43,7 +53,13 @@ func (c ConcurrentWork) Do(callback func(interface{}) error) []error {
 		go func() {
 			defer wg.Done()
 			for unit := range c.workChan {
+				if isSafe {
+					c.mutex.Lock()
+				}
 				err := callback(unit)
+				if isSafe {
+					c.mutex.Unlock()
+				}
 				errors = append(errors, err)
 			}
 		}()
