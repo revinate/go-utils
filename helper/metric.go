@@ -77,6 +77,21 @@ func (c *Count) Incr(now time.Time, key string, by int64) {
 	c.cleanOld()
 }
 
+func (c *Count) GetCount(now time.Time) int64 {
+	key := ""
+	if c.duration == time.Second {
+		key = fmt.Sprintf("%d-%d-%d %d:%d:%d", now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), now.Second())
+	} else if c.duration == time.Minute {
+		key = fmt.Sprintf("%d-%d-%d %d:%d", now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute())
+	} else if c.duration == time.Hour {
+		key = fmt.Sprintf("%d-%d-%d %d", now.Year(), now.Month(), now.Day(), now.Hour())
+	}
+	if window, ok := c.windows[key]; ok {
+		return *window.Count
+	}
+	return 0
+}
+
 func (c *Count) cleanOld() {
 	timeLimit := time.Now().Add(-c.duration * time.Duration(c.size)).Unix()
 	for key, val := range c.windows {
