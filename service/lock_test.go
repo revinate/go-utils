@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"golang.org/x/net/context"
+	"context"
 
 	. "gopkg.in/check.v1"
 	"github.com/revinate/go-utils/service"
@@ -23,7 +23,7 @@ func Test(t *testing.T) {
 }
 
 func getLockService() (*service.LockService, error) {
-	return service.NewLockService("127.0.0.1:2379", context.Background())
+	return service.NewLockService("etcd:2379", context.Background())
 }
 
 func (s *LockSuite) TestAcquireLockSuccess(c *C) {

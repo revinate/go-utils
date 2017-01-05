@@ -8,7 +8,7 @@ import (
 	"github.com/coreos/etcd/client"
 	"github.com/revinate/go-utils/helper"
 	"github.com/satori/go.uuid"
-	"golang.org/x/net/context"
+	"context"
 	"fmt"
 )
 

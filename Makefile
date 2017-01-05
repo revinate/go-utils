@@ -1,5 +1,5 @@
 test:
-	go test ./helper/... ./service/...
+	docker-compose up goutils_test
 
 coverage:
 	go test ./helper/... ./service/... -cover

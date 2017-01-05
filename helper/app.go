@@ -6,7 +6,7 @@ import (
 	"sync"
 	"syscall"
 
-	"golang.org/x/net/context"
+	"context"
 )
 
 type ContextFunc func(context.Context)
