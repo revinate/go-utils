@@ -1,13 +1,12 @@
 package service_test
 
 import (
+	"context"
 	"testing"
 	"time"
 
-	"context"
-
-	. "gopkg.in/check.v1"
 	"github.com/revinate/go-utils/service"
+	. "gopkg.in/check.v1"
 )
 
 const LockName = "test"
