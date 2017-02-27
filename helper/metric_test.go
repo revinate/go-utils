@@ -2,11 +2,9 @@ package helper_test
 
 import (
 	"testing"
-
-	"github.com/revinate/go-utils/helper"
-
 	"time"
 
+	"github.com/revinate/go-utils/helper"
 	. "gopkg.in/check.v1"
 )
 

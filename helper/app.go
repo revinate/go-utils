@@ -1,12 +1,11 @@
 package helper
 
 import (
+	"context"
 	"os"
 	"os/signal"
 	"sync"
 	"syscall"
-
-	"context"
 )
 
 type ContextFunc func(context.Context)

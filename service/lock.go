@@ -1,15 +1,14 @@
 package service
 
 import (
-	"time"
-
+	"context"
 	"errors"
+	"fmt"
+	"time"
 
 	"github.com/coreos/etcd/client"
 	"github.com/revinate/go-utils/helper"
 	"github.com/satori/go.uuid"
-	"context"
-	"fmt"
 )
 
 const (
@@ -17,13 +16,13 @@ const (
 )
 
 type LockService struct {
-	ctx context.Context
+	ctx    context.Context
 	client client.Client
 }
 
 func NewLockService(connUrl string, ctx context.Context) (*LockService, error) {
-	client, err := getEtcdClient(connUrl)
-	return &LockService{client: client, ctx: ctx}, err
+	etcdClient, err := getEtcdClient(connUrl)
+	return &LockService{client: etcdClient, ctx: ctx}, err
 }
 
 func getEtcdClient(connUrl string) (client.Client, error) {
@@ -102,7 +101,7 @@ func (l LockService) AcquireAndKeepLock(name string, ttl time.Duration, isBlocki
 	return value, nil
 }
 
-func (l LockService)ReleaseLock(name string, value string) error {
+func (l LockService) ReleaseLock(name string, value string) error {
 	name = getLockName(name)
 	api := client.NewKeysAPI(l.client)
 	_, err := api.Delete(context.Background(), name, &client.DeleteOptions{PrevValue: value, Recursive: true})
@@ -110,5 +109,5 @@ func (l LockService)ReleaseLock(name string, value string) error {
 }
 
 func getLockName(name string) string {
-	return fmt.Sprintf("%s/%s",LockDir,name)
+	return fmt.Sprintf("%s/%s", LockDir, name)
 }

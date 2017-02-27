@@ -2,7 +2,6 @@ package helper
 
 import (
 	"fmt"
-
 	"time"
 
 	"github.com/Sirupsen/logrus"
@@ -17,7 +16,8 @@ func InitLogging(isDebug bool) {
 		Log.Level = logrus.DebugLevel
 	} else {
 		Log.Level = logrus.InfoLevel
-	}}
+	}
+}
 
 // helper.FailOnError is on error behavior
 func Fatal(err error, msg string) {

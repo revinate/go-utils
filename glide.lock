@@ -1,8 +1,8 @@
-hash: 010a6082be18839083ad4f7492abab53ae7ead556a770f9fedab3bc5493b2020
-updated: 2016-10-04T12:37:19.616720979-07:00
+hash: 76bc82b6a13e954c44a1070b4abc0a0ea667485d9c2702d0da92d8fa35cde732
+updated: 2017-02-27T10:35:52.081683203-08:00
 imports:
 - name: github.com/coreos/etcd
-  version: 2469a9568548b3f8abc22f5a2462c3443823334a
+  version: 714e7ec8db7f8398880197be10771fe89c480ee5
   subpackages:
   - client
   - pkg/pathutil
@@ -14,15 +14,19 @@ imports:
 - name: github.com/satori/go.uuid
   version: 879c5887cd475cd7864858769793b2ceb0d44feb
 - name: github.com/Sirupsen/logrus
-  version: 4b6ea7319e214d98c938f12692336f7ca9348d6b
+  version: 0208149b40d863d2c1a2f8fe5753096a9cf2cc8b
 - name: github.com/ugorji/go
-  version: f1f1a805ed361a0e078bb537e4ea78cd37dcf065
+  version: ded73eae5db7e7a0ef6f55aace87a2873c5d2b74
   subpackages:
   - codec
 - name: golang.org/x/net
-  version: f315505cf3349909cdf013ea56690da34e96a451
+  version: f2499483f923065a842d38eb4c7f1927e6fc6e6d
   subpackages:
   - context
+  - http2
+  - http2/hpack
+  - internal/timeseries
+  - trace
 - name: golang.org/x/sys
   version: 9c60d1c508f5134d1ca726b4641db998f2523357
   subpackages:
