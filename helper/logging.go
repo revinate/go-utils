@@ -10,8 +10,8 @@ import (
 
 var Log = logrus.New()
 
-func InitLogging(isDebug bool) {
-	Log.Formatter = &logrus.TextFormatter{}
+func InitLogging(isDebug bool, formatter logrus.Formatter) {
+	Log.Formatter = formatter
 	if isDebug {
 		Log.Level = logrus.DebugLevel
 	} else {
