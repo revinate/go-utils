@@ -2,10 +2,9 @@ package helper
 
 import (
 	"fmt"
-	"time"
-
-	"github.com/Sirupsen/logrus"
 	"github.com/kr/pretty"
+	"github.com/sirupsen/logrus"
+	"time"
 )
 
 var Log = logrus.New()
